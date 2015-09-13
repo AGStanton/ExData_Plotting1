@@ -12,16 +12,20 @@ png(filename = "plot4.png", width = 480, height = 480)
 
 ## construct the plots
 par(mfcol = c(2,2))
+
 ## first plot
 plot(asdf$datetime, asdf$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power")
+
 ## second plot
 plot(asdf$datetime, asdf$Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
 lines(asdf$datetime, asdf$Sub_metering_2, col = "red")
 lines(asdf$datetime, asdf$Sub_metering_3, col = "blue")
 legend("topright", lty = c(1,1,1), col = c("black", "red", "blue"),  
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
 ## third plot
 plot(asdf$datetime, asdf$Voltage, xlab = "datetime", ylab = "Voltage", type = "l")
+
 ## fourth plot
 plot(asdf$datetime, asdf$Global_reactive_power, xlab = "datetime", ylab = "Global_reactive_power", type = "l")
 
